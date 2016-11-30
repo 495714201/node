@@ -41,7 +41,4 @@ console.log(new Buffer([1,2,3]));//<Buffer 01 02 03>
 //注：buffer一旦创建，大小就不能改了
 
 
-//字符串和Buffer转换
-//Buffer转字符串 Buffer.toString([encoding],[start],[end])
-
 
