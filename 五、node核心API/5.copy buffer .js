@@ -1,4 +1,5 @@
 //复制Buffer
+console.log(111);
 //Buffer.copy(targetBuffer, targetstart, sourcestart, sourceend);
 const buf4 = new Buffer('乐乐1');
 const buf5 = new Buffer('乐乐开心极了');
