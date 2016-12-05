@@ -39,4 +39,26 @@ console.log(444);
 // callBack2:The content is for read file.js.
 // [Finished in 0.1s]
 
-//http://www.zhufengpeixun.cn/course/25/learn#lesson/452      0：20：00
+try {
+	var data = fs.readFileSync('forReadno.txt', 'utf8');
+}catch(err) {
+	console.error(err);
+	// console.log(err);
+}
+//print:
+/*{ [Error: ENOENT: no such file or directory, open 'forReadno.txt']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'forReadno.txt' }*/
+
+//注意：异步代码在try里面报错之后catch是捕获不到的，因为它会执行try里面的，如果try里面报错了，就直接退出了，不会执行catch里的代码。
+//eg：
+try {
+	setTimeout(function(){
+		throw Error('error');
+	},1000)
+}catch(err) {
+	console.error(err);
+	// console.log(err);
+}
