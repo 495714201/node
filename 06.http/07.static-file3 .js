@@ -22,4 +22,4 @@ var server = http.createServer(function(req, res) {
 });
 server.listen(8099,'127.0.0.1');
 
-// 47分钟ajax 开始 http://www.zhufengpeixun.cn/course/25/learn#lesson/455
+
