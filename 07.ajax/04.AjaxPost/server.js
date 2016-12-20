@@ -1,11 +1,11 @@
-//引入核心模块
 var http = require('http');
-//引用URL解析URL参数
 var url = require('url');
-//读写文件
 var fs = require('fs');
+
+// 新的模块，核心模块 querystring  
+// 实现查询字符串和对象之间的互转
 var querystring = require('querystring');
-//创建http服务器
+
 //只有当提交form表单，并且是GET请求的时候，浏览器才会把表单进行序列化拼到URL后面
 http.createServer(function(req,res){
     //一定会返回一个对象

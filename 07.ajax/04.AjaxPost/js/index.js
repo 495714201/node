@@ -22,6 +22,7 @@ window.onload = function(){
         };
         //准备发送给服务器的数据
         var formData = new FormData();
+        // FormData是h5的一个新对象
         //给这个表单对象增加一个表单元素
         formData.append('username',document.querySelector('input[name=username]').value);
         //给这个表单对象增加一个表单元素

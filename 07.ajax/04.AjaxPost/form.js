@@ -1,10 +1,8 @@
-//引入核心模块
 var http = require('http');
-//引用URL解析URL参数
 var url = require('url');
-//读写文件
 var fs = require('fs');
 var formidable = require('formidable');
+// 第三方模块，需要提前安装。
 var querystring = require('querystring');
 var util  = require('util');
 var mime  = require('mime');
@@ -86,4 +84,4 @@ http.createServer(function(req,res){
     }
 
 
-}).listen(8080);
+}).listen(8099);

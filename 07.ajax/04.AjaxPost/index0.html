@@ -5,25 +5,23 @@
     <title>Title</title>
 </head>
 <body>
+<form name="userform">
+    用户名<input type="text" name="username"><br/>
+    密码<input type="text" name="password">
+    <input type="submit" value="注册">
+    <input type="button" id="regBtn" value="注册"/>
+</form>
 <ul id="content"></ul>
 </body>
 <script>
   var xhr = new XMLHttpRequest();
   xhr.open('GET','books.json',false);//异步发起请求
-  //设置响应类型
-  //xhr.responseType = 'json';
+  // 当form用get发起请求时，浏览器里会将发送的字段拼接在url后面，比如访问它时：
+  // file:///Users/jianfangjing/Desktop/node/07.ajax/04.AjaxPost/index0.html：
+  // url里会拼成如下：
+  // file:///Users/jianfangjing/Desktop/node/07.ajax/04.AjaxPost/index0.html?username=%E5%8F%91&password=%E5%8F%91
   xhr.onreadystatechange = function(){
       if(xhr.readyState == 4 && /2\d{2}/.test(xhr.status)){
-          //获取所有的响应头
-          //console.log(xhr.getAllResponseHeaders());
-          //获取指定的响应头
-          //console.log(xhr.getResponseHeader('Content-Type'));
-          //获取响应体以及响应的状态码描述
-          //console.log(xhr.responseText,xhr.statusText);
-          //输出响应体，响应体的类型由responseType决定
-          //console.log(xhr.response);
-          //得到响应体，转成json数组
-          console.log(xhr.response);
           var books = JSON.parse(xhr.responseText);
           var content = document.querySelector('#content');
           for(var i=0;i<books.length;i++){
@@ -35,6 +33,7 @@
       }
   //异步的操作
   xhr.send();
+  // 可以开始 ：http://www.zhufengpeixun.cn/course/25/learn#lesson/485
   }
 </script>
 </html>
